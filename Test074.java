@@ -33,7 +33,7 @@ class NumberTest
 	}
 	*/
 
-	//사용자 정의 생성자
+	//사용자 정의 생성자(직접 정의)
 	NumberTest()
 	{
 		num=10;
@@ -58,8 +58,30 @@ public class Test074
 	{
 		//NumbetTest 클래스 기반 인스턴스 생성
 		NumberTest nt1 =new NumberTest();
+		//--인스턴스가 생성되는 시점에서 
+		// 이와 동시에 생성자 호출이 이루어진다.
+
+		/*
+		 NumberTest nt1 = new NumberTest
+		 						+
+							NumberTest()
+		*/
 
 		System.out.println(nt1.getNum());
+		//--==>> 사용자 정의 생성자 호출~!!!
+		//		10
+
+		nt1.num =100;
+		System.out.println(nt1.getNum());
+
+		System.out.println("--------------------");
+
+		NumberTest nt2 = new NumberTest();
+
+		System.out.println(nt2.getNum());
+
+
+
 
 
 
