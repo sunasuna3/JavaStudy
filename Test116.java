@@ -48,7 +48,6 @@ class SungjukImpl implements Sungjuk
 {
 	int num=0;
 	Record[] arr;
-	Record[] arr2;
 	
 	public void set()
 	{
@@ -106,7 +105,7 @@ class SungjukImpl implements Sungjuk
 			//학번, 이름, 국어점수, 수학점수, 영어점수, 총점, 평균 출력하기
 			System.out.printf(" %s %s %d %d %d %d  %d\n",arr[i].hak,arr[i].name,arr[i].kor,arr[i].eng,arr[i].mat,arr[i].tot,arr[i].avg);
 		
-		//국어점수, 수학점수, 영어점수를 수우미양가 출력하기
+		//국어점수, 수학점수, 영어점수를 각각 수우미양가 출력하기
 		//90-수
 		//80-우
 		//70-미
@@ -119,6 +118,7 @@ class SungjukImpl implements Sungjuk
 		case 7 : System.out.print("\t\t미"); break;
 		case 6 : System.out.print("\t\t양"); break;
 		case 5 : System.out.print("\t\t가"); break;
+		default : System.out.print("\t\t가"); break;
 		}
 		switch (arr[i].eng/10)
 		{
@@ -127,6 +127,7 @@ class SungjukImpl implements Sungjuk
 		case 7 : System.out.print(" 미"); break;
 		case 6 : System.out.print(" 양"); break;
 		case 5 : System.out.print(" 가"); break;
+		default : System.out.print(" 가"); break;
 		}
 		switch (arr[i].mat/10)
 		{
@@ -135,6 +136,7 @@ class SungjukImpl implements Sungjuk
 		case 7 : System.out.println(" 미"); break;
 		case 6 : System.out.println(" 양"); break;
 		case 5 : System.out.println(" 가"); break;
+		default : System.out.print(" 가"); break;
 		}
 			
 		}
