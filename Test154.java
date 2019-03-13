@@ -19,6 +19,9 @@
 //	  -> 접근 방법 -> 데이터 안정성 확보 -- check~!!!
    
 
+import java.util.Vector;
+import java.util.Iterator;
+
 //MyVector 클래스 설계 -> Vector 클래스 상속 
 class MyVector extends Vector<Object>
 {
@@ -40,6 +43,87 @@ class MyVector extends Vector<Object>
 	void addInt(int i)
 	{
 		addElement(new Integer(i));
+	}
+
+	void addFloat(float f)
+	{
+		addElement(new Float(f));
+	}
+	void addString (String s)
+	{
+		addElement(s);
+	}
+	void addCharArray(char[] a)
+	{
+		addElement(a);
+	}
+	void write()
+	{
+		/*
+		Iterator<Object> it =this.iterator();
+		while (it.hasNext())
+		{
+			System.out.println(it.next());
+		}
+		*/
+		//--=>5
+		//	  3.14
+		//	  안녕하세요
+		//	  [C@15db9742--벡터는 배열을 처리할 때 원래있던 형태로 처리하는게 아니다.
+		
+		// 위의 결과와 비교~!!!
+
+		Object o;
+		int length = size();
+
+		System.out.println("벡터 요소 갯수 :  " + length);
+		//--==> 벡터 요소 갯수 :  4
+
+		for (int i=0; i<length; i++ )
+		{
+			o=elementAt(i); //i번째 인덱스를 가진 것을 얻어오겠다.
+
+			//『instanceof』 연산자
+			//-- 처리해야 하는 대상의 객체 타입 확인
+
+			if (o instanceof Integer) //o가 Integer 라면
+			{
+				System.out.println("정수형 : "+o);
+			}
+			else if (o instanceof Float)
+			{
+				System.out.println("실수형 : "+o);
+			}
+			else if (o instanceof String)
+			{
+				System.out.println("문자열형 : "+o.toString());
+			}
+			else if (o instanceof char[])
+			{
+				System.out.println("문자배열 : "+String.copyValueOf((char[])o));
+				//--==> 문자배열 : study
+
+				/*
+				System.out.print("문자 배열 :");
+				for (char ch :(char[])o) 
+				{
+					System.out.print(ch);
+				}
+				System.out.println();
+				*/
+				
+				
+			}
+			else
+			{
+				System.out.println("타입 확인 불가~!!");
+			}
+			
+		
+		}
+
+		
+
 	}
 
 
@@ -67,5 +151,7 @@ public class Test154
 		v.addCharArray(letters);//--벡터 자료구조에 문자 배열 저장
 
 		v.write();
+
+
 	}
 }
