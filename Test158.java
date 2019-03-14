@@ -150,8 +150,6 @@ public class Test158 extends Menus
 		System.out.println("5.요소 변경");
 		System.out.println("6.종료");
 		System.out.print(">> 메뉴 선택(1~6) : ");
-		
-	
 	}
 
 	//메뉴 선택 메소드
