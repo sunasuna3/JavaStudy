@@ -82,6 +82,7 @@ public class Test160
 
 		//출력 -> listIterator() 메소드를 통해 출력
 		System.out.println("=================================");
+
 		ListIterator<String> li = list3.listIterator();
 		while (li.hasNext())
 		{
